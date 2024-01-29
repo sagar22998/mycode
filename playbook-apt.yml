@@ -1,0 +1,12 @@
+---
+- name: Playbook - Install figlet
+  hosts: planetexpress:!farnsworth
+  connection: ssh
+  gather_facts: true # Setup Module
+
+  tasks: 
+  - name: using apt to install figlet
+    apt:
+      name: figlet
+      state: present
+    become: true
